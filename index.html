@@ -280,97 +280,6 @@ h1 {
   .center-panel, .right-panel { height: auto; }
 }
 
-/* ─── FOOTER ─── */
-footer {
-  background: linear-gradient(180deg, rgba(18,18,24,0.95), rgba(10,10,15,0.98));
-  border-top: 2px solid var(--border);
-  padding: 2rem;
-  margin-top: auto;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto 1.5rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.footer-left h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-  letter-spacing: 1px;
-}
-
-.patreon-btn {
-  display: inline-block;
-  padding: 0.8rem 2rem;
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-shine));
-  color: var(--bg-dark);
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(212,175,55,0.3);
-}
-
-.patreon-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212,175,55,0.5);
-  background: linear-gradient(135deg, var(--gold), var(--gold-shine), var(--gold));
-}
-
-.footer-right {
-  text-align: right;
-}
-
-.contact-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--silver-shine);
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  font-size: 0.85rem;
-  color: var(--gray);
-}
-
-.contact-details a {
-  color: var(--silver);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-details a:hover {
-  color: var(--silver-shine);
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(212,175,55,0.1);
-  font-size: 0.75rem;
-  color: var(--gray);
-  letter-spacing: 0.5px;
-}
-
-@media (max-width: 768px) {
-  .footer-content { flex-direction: column; text-align: center; }
-  .footer-right { text-align: center; }
-  .contact-details { align-items: center; }
-}
-
 /* ─── ANIMATIONS ─── */
 .fade-in { animation: fadeIn 0.5s cubic-bezier(.16,1,.3,1) both; }
 @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
@@ -403,25 +312,13 @@ footer {
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-left">
-      <h3>Support This Research</h3>
-      <a href="https://www.patreon.com/c/Myredgarnet" target="_blank" class="patreon-btn">
-        ⭐ Support on Patreon
-      </a>
-    </div>
-    <div class="footer-right">
-      <div class="contact-name">Ren Rivera</div>
-      <div class="contact-details">
-        <span>📱 Telegram/WhatsApp: <a href="tel:+639649927262">+63 964 992 7262</a></span>
-        <span>🌐 Website: <a href="https://www.patreon.com/c/Myredgarnet" target="_blank">patreon.com/c/Myredgarnet</a></span>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Tech Conglomerate Analysis • Market Research & Startup Opportunities</p>
-  </div>
+<footer style="text-align:center;padding:1.2rem 2rem;font-size:0.78rem;color:var(--gray);">
+<p style="margin:0 0 0.6rem 0;font-size:0.72rem;letter-spacing:0.3px;color:#666;">
+<strong style="color:var(--silver-shine);font-weight:500;">Ren Rivera</strong> · 📱 Telegram/WhatsApp: <a href="tel:+639649927262" style="color:var(--gold);text-decoration:none;font-weight:500;">+63 964 992 7262</a> · 🌐 <a href="https://www.patreon.com/c/Myredgarnet" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:500;">Support on Patreon</a>
+</p>
+<p style="margin:0;font-size:0.75rem;letter-spacing:0.5px;border-top:1px solid rgba(212,175,55,0.1);padding-top:0.6rem;">
+© 2026 Tech Conglomerate Analysis · Market Research & Startup Opportunities
+</p>
 </footer>
 
 <script>
