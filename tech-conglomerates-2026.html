@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 20 Tech Conglomerates - Market Analysis 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark: #0a0a0f;
+  --bg-mid: #121218;
+  --bg-panel: #1a1a22;
+  --gold: #D4AF37;
+  --gold-shine: #FFD966;
+  --gold-dark: #B8941F;
+  --silver: #C0C0C0;
+  --silver-shine: #E0E0E6;
+  --silver-dark: #A8A8AE;
+  --bronze: #CD7F32;
+  --bronze-shine: #E89955;
+  --bronze-dark: #9D5F22;
+  --white: #F5F5F7;
+  --gray: #8A8A90;
+  --border: rgba(212,175,55,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #0f0f16 50%, var(--bg-dark) 100%);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── HEADER ─── */
+header {
+  background: linear-gradient(180deg, rgba(26,26,34,0.95), rgba(18,18,24,0.9));
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--border);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-shine) 50%, var(--gold) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldFlow 4s linear infinite;
+}
+
+@keyframes goldFlow { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+.subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* ─── LAYOUT ─── */
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  max-height: calc(100vh - 200px);
+}
+
+/* ─── LEFT SIDEBAR (GOLD NAMES) ─── */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, rgba(26,26,34,0.9), rgba(18,18,24,0.85));
+  border-right: 2px solid var(--border);
+  overflow-y: auto;
+  padding: 1rem 0.5rem;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.3); border-radius: 2px; }
+
+.company-btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.3rem;
+  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.16,1,.3,1);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.btn-logo {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.btn-logo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.company-btn:hover {
+  background: rgba(212,175,55,0.12);
+  border-color: var(--gold);
+  transform: translateX(4px);
+}
+
+.company-btn.active {
+  background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(212,175,55,0.1));
+  border-color: var(--gold-shine);
+  box-shadow: 0 4px 16px rgba(212,175,55,0.25);
+}
+
+.btn-rank {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0 0 8px rgba(212,175,55,0.6);
+  min-width: 24px;
+}
+
+.btn-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--gold-shine);
+  text-shadow: 0 0 6px rgba(212,175,55,0.4);
+}
+
+.btn-products {
+  font-size: 0.65rem;
+  color: var(--gray);
+  letter-spacing: 0.5px;
+}
+
+/* ─── CENTER PANEL (SILVER STRENGTHS) ─── */
+.center-panel {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(26,26,34,0.6), rgba(18,18,24,0.5));
+  border-right: 2px solid var(--border);
+  overflow-y: auto;
+  padding: 2rem 1.8rem;
+}
+
+.center-panel::-webkit-scrollbar { width: 5px; }
+.center-panel::-webkit-scrollbar-track { background: transparent; }
+.center-panel::-webkit-scrollbar-thumb { background: rgba(192,192,192,0.3); border-radius: 3px; }
+
+.panel-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--silver-shine);
+  text-shadow: 0 0 8px rgba(192,192,192,0.5);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(192,192,192,0.2);
+}
+
+.strength-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.strength-item {
+  background: linear-gradient(135deg, rgba(192,192,192,0.08), rgba(192,192,192,0.03));
+  border: 1px solid rgba(192,192,192,0.2);
+  border-left: 3px solid var(--silver);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+}
+
+.strength-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--silver-shine);
+  margin-bottom: 0.4rem;
+}
+
+.strength-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(245,245,247,0.8);
+}
+
+/* ─── RIGHT PANEL (BRONZE OPPORTUNITIES) ─── */
+.right-panel {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(26,26,34,0.6), rgba(18,18,24,0.5));
+  overflow-y: auto;
+  padding: 2rem 1.8rem;
+}
+
+.right-panel::-webkit-scrollbar { width: 5px; }
+.right-panel::-webkit-scrollbar-track { background: transparent; }
+.right-panel::-webkit-scrollbar-thumb { background: rgba(205,127,50,0.3); border-radius: 3px; }
+
+.opp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.opp-item {
+  background: linear-gradient(135deg, rgba(205,127,50,0.08), rgba(205,127,50,0.03));
+  border: 1px solid rgba(205,127,50,0.2);
+  border-left: 3px solid var(--bronze);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+}
+
+.opp-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bronze-shine);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.opp-icon {
+  width: 18px;
+  height: 18px;
+  background: var(--bronze);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: #0a0a0f;
+  font-weight: 700;
+}
+
+.opp-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(245,245,247,0.8);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .container { flex-direction: column; height: auto; }
+  .sidebar { width: 100%; max-height: 200px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .center-panel, .right-panel { height: auto; }
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-in { animation: fadeIn 0.5s cubic-bezier(.16,1,.3,1) both; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>◈ TOP 20 TECH CONGLOMERATES ◈</h1>
+    <p class="subtitle">Physical Product Lines • Market Analysis • Feb 2026</p>
+  </div>
+</header>
+
+<div class="container">
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar" id="sidebar"></aside>
+  
+  <!-- CENTER PANEL -->
+  <div class="center-panel" id="centerPanel">
+    <div class="panel-title">◇ COMPETITIVE STRENGTHS ◇</div>
+    <div id="strengthsContent"></div>
+  </div>
+  
+  <!-- RIGHT PANEL -->
+  <div class="right-panel" id="rightPanel">
+    <div class="panel-title">◆ EXPLOITABLE OPPORTUNITIES ◆</div>
+    <div id="opportunitiesContent"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="text-align:center;padding:1.2rem 2rem;font-size:0.78rem;color:var(--gray);">
+<p style="margin:0 0 0.6rem 0;font-size:0.72rem;letter-spacing:0.3px;color:#666;">
+<strong style="color:var(--silver-shine);font-weight:500;">Ren Rivera</strong> · 📱 Telegram/WhatsApp: <a href="tel:+639649927262" style="color:var(--gold);text-decoration:none;font-weight:500;">+63 964 992 7262</a> · 🌐 <a href="https://www.patreon.com/c/Myredgarnet" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:500;">Support on Patreon</a>
+</p>
+<p style="margin:0;font-size:0.75rem;letter-spacing:0.5px;border-top:1px solid rgba(212,175,55,0.1);padding-top:0.6rem;">
+© 2026 Tech Conglomerate Analysis · Market Research & Startup Opportunities
+</p>
+</footer>
+
+<script>
+// ─── COMPANY LOGOS (SVG) ───
+const logos = {
+  nvidia: '<svg viewBox="0 0 100 100" fill="#76B900"><path d="M20,30 L20,70 L50,85 L50,45 L80,30 L50,15 Z M25,35 L47,47 L47,78 L25,66 Z"/></svg>',
+  tsmc: '<svg viewBox="0 0 100 100" fill="#0066CC"><circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="6"/><path d="M50,20 L50,80 M25,50 L75,50"/></svg>',
+  apple: '<svg viewBox="0 0 100 100" fill="#FFFFFF"><path d="M60,20 Q50,15 45,20 Q40,25 40,32 Q50,30 55,32 Q60,34 60,40 Q55,50 50,60 Q45,70 50,80 Q55,85 60,80 Q70,70 75,60 Q80,50 80,40 Q80,30 75,25 Q70,20 60,20 M55,15 Q60,10 65,12 Q70,14 68,20"/></svg>',
+  samsung: '<svg viewBox="0 0 100 100" fill="#1428A0"><ellipse cx="50" cy="50" rx="40" ry="25"/><text x="50" y="58" font-size="24" text-anchor="middle" fill="white" font-weight="bold">S</text></svg>',
+  broadcom: '<svg viewBox="0 0 100 100" fill="#CC0000"><rect x="20" y="20" width="60" height="60" rx="8"/><path d="M35,35 L65,65 M65,35 L35,65" stroke="white" stroke-width="6"/></svg>',
+  asml: '<svg viewBox="0 0 100 100" fill="#0066FF"><path d="M50,20 L80,50 L50,80 L20,50 Z"/><circle cx="50" cy="50" r="15" fill="white"/></svg>',
+  qualcomm: '<svg viewBox="0 0 100 100" fill="#3253DC"><path d="M30,50 Q30,30 50,30 Q70,30 70,50 Q70,70 50,70 Q30,70 30,50 M40,50 Q40,40 50,40 Q60,40 60,50 Q60,60 50,60 Q40,60 40,50"/></svg>',
+  intel: '<svg viewBox="0 0 100 100" fill="#0071C5"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="20" fill="white"/><circle cx="50" cy="50" r="10" fill="#0071C5"/></svg>',
+  amd: '<svg viewBox="0 0 100 100" fill="#ED1C24"><path d="M20,80 L50,20 L80,80 Z M35,65 L50,40 L65,65 Z"/></svg>',
+  lg: '<svg viewBox="0 0 100 100" fill="#A50034"><circle cx="50" cy="40" r="20"/><path d="M30,60 Q50,80 70,60" fill="none" stroke="currentColor" stroke-width="6"/></svg>',
+  sony: '<svg viewBox="0 0 100 100" fill="#000000"><text x="50" y="60" font-size="36" text-anchor="middle" font-weight="bold">SONY</text></svg>',
+  micron: '<svg viewBox="0 0 100 100" fill="#0099DD"><path d="M25,35 L35,25 L50,40 L65,25 L75,35 L75,75 L25,75 Z"/></svg>',
+  google: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="#4285F4" stroke-width="6" stroke-dasharray="94 47"/><circle cx="50" cy="50" r="30" fill="none" stroke="#EA4335" stroke-width="6" stroke-dasharray="47 94" stroke-dashoffset="-47"/><circle cx="50" cy="50" r="30" fill="none" stroke="#FBBC04" stroke-width="6" stroke-dasharray="47 94" stroke-dashoffset="-94"/><circle cx="50" cy="50" r="30" fill="none" stroke="#34A853" stroke-width="6" stroke-dasharray="47 94" stroke-dashoffset="-141"/></svg>',
+  ibm: '<svg viewBox="0 0 100 100" fill="#1F70C1"><rect x="20" y="30" width="60" height="8"/><rect x="20" y="46" width="60" height="8"/><rect x="20" y="62" width="60" height="8"/></svg>',
+  oracle: '<svg viewBox="0 0 100 100" fill="#F80000"><ellipse cx="50" cy="50" rx="35" ry="20" fill="none" stroke="currentColor" stroke-width="6"/></svg>',
+  dell: '<svg viewBox="0 0 100 100" fill="#007DB8"><circle cx="50" cy="50" r="35"/><text x="50" y="60" font-size="28" text-anchor="middle" fill="white" font-weight="bold">DELL</text></svg>',
+  hp: '<svg viewBox="0 0 100 100" fill="#0096D6"><circle cx="35" cy="50" r="15"/><circle cx="65" cy="50" r="15"/></svg>',
+  lenovo: '<svg viewBox="0 0 100 100" fill="#E2231A"><rect x="20" y="35" width="60" height="30" rx="4"/><text x="50" y="58" font-size="18" text-anchor="middle" fill="white" font-weight="bold">Lenovo</text></svg>',
+  asus: '<svg viewBox="0 0 100 100" fill="#000000"><path d="M30,70 L50,30 L70,70 M38,60 L62,60"/><circle cx="50" cy="28" r="5" fill="#FF0000"/></svg>',
+  tesla: '<svg viewBox="0 0 100 100" fill="#CC0000"><path d="M50,25 L50,75 M30,35 Q50,30 70,35 M30,50 L70,50 M35,65 Q50,70 65,65"/></svg>'
+};
+
+const companies = [
+  {
+    id: 'nvidia',
+    name: 'NVIDIA',
+    rank: 1,
+    products: 'AI GPUs, Gaming',
+    strengths: [
+      { title: 'AI Market Dominance', desc: 'Commands 90%+ of AI accelerator market. H100/H200 GPUs essential for training large language models. $213B revenue (66% YoY growth).' },
+      { title: 'CUDA Software Moat', desc: 'Proprietary CUDA ecosystem locks in developers. Switching costs astronomical. 20+ years of ML framework optimization.' },
+      { title: 'Full-Stack Integration', desc: 'Hardware + software + networking (DPUs) + cloud platforms. Executes better than any previous tech leader.' },
+      { title: 'Customer Lock-in', desc: 'Apple, Microsoft, Meta, Amazon all dependent. TSMC\'s largest customer ($33B/yr). Supply shortages create pricing power.' }
+    ],
+    opportunities: [
+      { icon: '⚡', title: 'Cooling Solutions', desc: 'H100/H200 chips generate massive heat. Startups can build advanced liquid cooling systems, immersion cooling, or datacenter thermal management software.' },
+      { icon: '🔌', title: 'Power Management', desc: 'AI datacenters need 4.5GW+ power (equivalent of 4 nuclear plants). Opportunity for energy optimization software and grid integration tools.' },
+      { icon: '💾', title: 'Memory Bottlenecks', desc: 'HBM memory shortages limit GPU utilization. Build memory optimization middleware or alternative HBM suppliers.' },
+      { icon: '🛠️', title: 'MLOps Tooling', desc: 'CUDA is complex. Create developer-friendly ML deployment tools, CUDA alternatives, or model optimization platforms that reduce compute costs.' }
+    ]
+  },
+  {
+    id: 'tsmc',
+    name: 'TSMC',
+    rank: 2,
+    products: 'Semiconductors',
+    strengths: [
+      { title: 'Manufacturing Monopoly', desc: '71% of global foundry market. Only company with mass-production 3nm chips. 2nm coming 2025, 1.4nm by 2027.' },
+      { title: 'Technology Leadership', desc: 'First to commercialize EUV lithography. Advanced packaging (CoWoS) enables AI chips. Apple, Nvidia, AMD all depend on TSMC.' },
+      { title: 'Unmatched Scale', desc: '13M wafers/year capacity. $52-56B capex in 2026. Revenue up 36% to $122B. Gross margin 62.3% (software-level margins).' },
+      { title: 'Geographic Risk', desc: 'Taiwan location creates supply chain vulnerability but also strategic importance for US/China relations.' }
+    ],
+    opportunities: [
+      { icon: '📦', title: 'Supply Chain Diversity', desc: 'Single-source dependency risk. Build alternative foundries, regional manufacturing hubs, or supply chain management software.' },
+      { icon: '🔬', title: 'Process Optimization', desc: 'Fab yield optimization, defect detection AI, or equipment maintenance prediction tools for semiconductor manufacturing.' },
+      { icon: '🌍', title: 'Regional Foundries', desc: 'TSMC expanding globally but can\'t meet demand. Regional foundries for 7nm+ nodes or specialty processes (power chips, RF).' },
+      { icon: '💧', title: 'Water/Resource Management', desc: 'Chip fabs use massive water/chemicals. Build closed-loop water recycling systems or chemical recovery technologies.' }
+    ]
+  },
+  {
+    id: 'apple',
+    name: 'Apple',
+    rank: 3,
+    products: 'iPhone, Mac, iPad',
+    strengths: [
+      { title: 'Ecosystem Lock-in', desc: 'Seamless integration across devices. Services revenue (Apple Music, iCloud) creates recurring revenue. 2B+ active devices worldwide.' },
+      { title: 'Silicon Design Excellence', desc: 'M-series chips outperform Intel/AMD. A-series leads mobile. Custom silicon for camera, neural engine, security.' },
+      { title: 'Brand Premium', desc: 'Commands 40%+ profit margins. Customers pay premium for design, status, reliability. Strongest brand loyalty in tech.' },
+      { title: 'Vertical Integration', desc: 'Controls hardware, software, chips, retail. Only company with end-to-end product experience optimization.' }
+    ],
+    opportunities: [
+      { icon: '🔋', title: 'Battery Innovation', desc: 'iPhone battery life still lags competitors. Build longer-lasting batteries, fast-charging tech, or battery health optimization software.' },
+      { icon: '🔧', title: 'Repairability', desc: 'Right-to-repair movement grows. Create modular components, third-party repair tools, or diagnostic software.' },
+      { icon: '📱', title: 'Foldable Tech', desc: 'Apple behind Samsung on foldables. Build flexible OLED suppliers, hinge mechanisms, or durable screen coatings.' },
+      { icon: '💰', title: 'Pricing Accessibility', desc: 'Premium pricing excludes emerging markets. Create refurbished marketplaces, financing platforms, or budget accessory ecosystems.' }
+    ]
+  },
+  {
+    id: 'samsung',
+    name: 'Samsung',
+    rank: 4,
+    products: 'Phones, TVs, Memory',
+    strengths: [
+      { title: 'Diversified Product Portfolio', desc: 'Smartphones, TVs, appliances, semiconductors, displays. Vertical integration from chips to consumer products.' },
+      { title: 'Memory Chip Leadership', desc: 'World\'s largest DRAM/NAND producer. HBM capacity sold out through 2026. Memory prices surging 90-95%.' },
+      { title: 'Display Innovation', desc: 'Leader in OLED, foldable displays. Supplies screens to Apple, Google. Micro-LED TVs launching 2026.' },
+      { title: 'R&D Investment', desc: '$24B R&D spending (2024). 2nm chip production by 2025. Foundry business growing despite TSMC dominance.' }
+    ],
+    opportunities: [
+      { icon: '🤖', title: 'Software Ecosystem', desc: 'Lags Apple/Google in services. Build app stores, cloud services, or Samsung-exclusive software platforms.' },
+      { icon: '🔥', title: 'Quality Control', desc: 'Galaxy Note 7 battery scandal memories linger. Create battery safety testing, quality assurance AI, or recall prevention systems.' },
+      { icon: '📊', title: 'Supply Chain Fragility', desc: 'Complex global supply chain vulnerable to disruptions. Build supply chain resilience tools or component sourcing platforms.' },
+      { icon: '🎯', title: 'Market Segmentation', desc: 'Over-reliant on entry-level smartphones. Create premium brand differentiation tools or luxury product line strategies.' }
+    ]
+  },
+  {
+    id: 'broadcom',
+    name: 'Broadcom',
+    rank: 5,
+    products: 'Networking, Chips',
+    strengths: [
+      { title: 'Networking Dominance', desc: '$1.7T market cap. Critical for AI datacenters. Supplies switches, routers, optical components for hyperscalers.' },
+      { title: 'Diversified Revenue', desc: 'Semiconductors + enterprise software (VMware acquisition). Reduces dependence on single market.' },
+      { title: 'Infrastructure Essential', desc: 'Powers broadband, telecom, data centers. Chips in smartphones, routers, set-top boxes, servers.' },
+      { title: 'M&A Strategy', desc: 'Aggressive acquisitions (Symantec, CA Technologies, VMware). Consolidates market share.' }
+    ],
+    opportunities: [
+      { icon: '⚙️', title: 'Integration Complexity', desc: 'VMware acquisition creates integration challenges. Build enterprise migration tools or hybrid cloud management platforms.' },
+      { icon: '🌐', title: 'Open Networking', desc: 'Proprietary systems limit flexibility. Create open-source networking stacks or software-defined networking tools.' },
+      { icon: '💸', title: 'Pricing Pressure', desc: 'Enterprise customers seek cost reduction. Build competitive networking hardware or cloud-native alternatives.' },
+      { icon: '🔐', title: 'Security Gaps', desc: 'Network infrastructure security critical. Create zero-trust networking tools or AI-powered threat detection.' }
+    ]
+  },
+  {
+    id: 'asml',
+    name: 'ASML',
+    rank: 6,
+    products: 'Lithography',
+    strengths: [
+      { title: 'EUV Monopoly', desc: 'Only company producing EUV lithography machines. Essential for <7nm chips. Each machine costs $100M+.' },
+      { title: 'Technology Barrier', desc: 'Took 30+ years to develop EUV. Competitors decades behind. TSMC, Samsung, Intel completely dependent.' },
+      { title: 'Pricing Power', desc: '$1.1T market cap. Customers have zero alternatives. Backlog extends years into future.' },
+      { title: 'AI Boom Beneficiary', desc: 'AI chips require cutting-edge nodes. Every AI datacenter ultimately depends on ASML equipment.' }
+    ],
+    opportunities: [
+      { icon: '🔧', title: 'Maintenance Services', desc: 'EUV machines need constant calibration. Build third-party maintenance tools, spare parts marketplaces, or diagnostic software.' },
+      { icon: '🏭', title: 'Alternative Processes', desc: 'EUV is expensive and complex. Research chiplet architectures, 3D stacking, or post-silicon computing that bypasses EUV.' },
+      { icon: '📚', title: 'Training & Education', desc: 'EUV technicians scarce. Create training programs, simulation software, or technician certification platforms.' },
+      { icon: '♻️', title: 'Sustainability', desc: 'EUV uses massive energy and rare materials. Build energy-efficient systems or material recovery technologies.' }
+    ]
+  },
+  {
+    id: 'qualcomm',
+    name: 'Qualcomm',
+    rank: 7,
+    products: 'Mobile Chips, 5G',
+    strengths: [
+      { title: '5G Patent Portfolio', desc: 'Owns critical 5G patents. Every smartphone manufacturer pays licensing fees. Recurring revenue stream.' },
+      { title: 'Mobile Processor Leader', desc: 'Snapdragon powers Android flagship phones. X Elite bringing Qualcomm to Windows laptops.' },
+      { title: 'Automotive Push', desc: 'Snapdragon Ride for autonomous driving. Digital cockpits in Mercedes, BMW, GM. Diversifying beyond phones.' },
+      { title: 'AI on Edge', desc: 'NPU (Neural Processing Unit) in Snapdragon 8 Gen 3. 80 TOPS performance. On-device AI without cloud dependency.' }
+    ],
+    opportunities: [
+      { icon: '💻', title: 'Windows on ARM Adoption', desc: 'X Elite laptop uptake slow. Build compatibility layers, app emulation tools, or ARM-native software.' },
+      { icon: '🎮', title: 'Gaming Performance', desc: 'Snapdragon GPUs lag NVIDIA/Apple. Create GPU optimization tools or gaming-specific SoCs.' },
+      { icon: '🚗', title: 'Automotive Reliability', desc: 'Automotive grade chips need 10+ year reliability. Build long-term testing platforms or automotive-specific chip designs.' },
+      { icon: '📡', title: '6G Research', desc: '5G maturing, 6G next frontier. Invest in 6G patents, terahertz communication, or satellite-terrestrial integration.' }
+    ]
+  },
+  {
+    id: 'intel',
+    name: 'Intel',
+    rank: 8,
+    products: 'CPUs, Foundry',
+    strengths: [
+      { title: 'Datacenter Dominance', desc: 'Despite AMD gains, Intel still >50% server CPU share. Xeon processors power cloud infrastructure.' },
+      { title: 'Manufacturing Push', desc: 'Investing $52B in US fabs. 18A process node by 2026. Foundry business targeting Apple/Nvidia.' },
+      { title: 'x86 Ecosystem', desc: 'Decades of software compatibility. Windows, Linux optimized for Intel. Enterprise reluctance to switch architectures.' },
+      { title: 'Government Support', desc: 'CHIPS Act funding. Strategic US semiconductor manufacturing. National security importance.' }
+    ],
+    opportunities: [
+      { icon: '⚡', title: 'Performance Gap', desc: 'Panther Lake underwhelming vs AMD/Qualcomm. Build high-performance cores or energy-efficient designs.' },
+      { icon: '🏭', title: 'Foundry Yields', desc: 'Intel foundry struggling with yields. Create process optimization tools or defect detection AI.' },
+      { icon: '🔋', title: 'Power Efficiency', desc: 'Intel chips lag Arm in battery life. Build power management firmware or ultra-low-power cores.' },
+      { icon: '💡', title: 'Innovation Speed', desc: 'Slow product cycles vs competitors. Create rapid prototyping tools or agile chip design methodologies.' }
+    ]
+  },
+  {
+    id: 'amd',
+    name: 'AMD',
+    rank: 9,
+    products: 'CPUs, GPUs',
+    strengths: [
+      { title: 'Server Market Share', desc: 'EPYC processors now ~40% server CPU share (from near-zero in 2017). Chiplet design advantage.' },
+      { title: 'Zen Architecture', desc: 'Zen 5 competitive with Intel. Better performance-per-watt. Lower pricing than Intel Xeon.' },
+      { title: 'GPU Portfolio', desc: 'Radeon competes with Nvidia in gaming. MI300X AI accelerator growing (though far behind H100).' },
+      { title: 'Comeback Story', desc: 'Lisa Su\'s leadership transformed AMD. Bet on chiplets + TSMC = winning strategy.' }
+    ],
+    opportunities: [
+      { icon: '🤖', title: 'AI Accelerator Gap', desc: 'MI300X lags Nvidia H100. Build AI training optimizers, ROCm ecosystem tools, or CUDA-to-ROCm translation layers.' },
+      { icon: '💻', title: 'Mobile Weakness', desc: 'Zen 5 not optimized for laptops. Create ultra-low-power cores or battery optimization firmware.' },
+      { icon: '🎮', title: 'Gaming Ray Tracing', desc: 'RDNA GPU ray tracing behind Nvidia RTX. Build hardware ray tracing accelerators or upscaling tech.' },
+      { icon: '📈', title: 'Margin Pressure', desc: 'Growing in low-margin segments. Create premium product differentiation or software value-add services.' }
+    ]
+  },
+  {
+    id: 'lg',
+    name: 'LG Electronics',
+    rank: 10,
+    products: 'TVs, Appliances',
+    strengths: [
+      { title: 'OLED TV Leadership', desc: 'Dominates premium TV market with LG Display. Micro-LED TVs launching 2026. Superior picture quality.' },
+      { title: 'Home Appliance Innovation', desc: 'AI-powered refrigerators, washing machines, ovens. ThinQ ecosystem connects smart home devices.' },
+      { title: 'Display Manufacturing', desc: 'LG Display supplies panels to Apple, Samsung, Sony. Critical OLED supply chain player.' },
+      { title: 'Robotics Push', desc: 'CLOiD home robot can cook, clean, do laundry. Physical AI integration in consumer products.' }
+    ],
+    opportunities: [
+      { icon: '🤖', title: 'Smart Home Fragmentation', desc: 'ThinQ competes with Apple HomeKit, Google Home, Amazon Alexa. Build universal smart home standards or interoperability layers.' },
+      { icon: '💰', title: 'Premium Pricing', desc: 'OLED TVs expensive ($2K+). Create affordable OLED alternatives or financing platforms for premium appliances.' },
+      { icon: '🔧', title: 'Repairability', desc: 'Smart appliances hard to repair. Build modular smart appliance components or third-party repair ecosystems.' },
+      { icon: '🌐', title: 'Software Ecosystem', desc: 'WebOS TV platform underutilized. Create LG-exclusive apps, gaming platforms, or content partnerships.' }
+    ]
+  },
+  {
+    id: 'sony',
+    name: 'Sony',
+    rank: 11,
+    products: 'PlayStation, Cameras',
+    strengths: [
+      { title: 'PlayStation Ecosystem', desc: 'PS5 dominates console gaming. 120M+ PlayStation Plus subscribers. Exclusive game franchises.' },
+      { title: 'Image Sensor Monopoly', desc: 'Sony sensors in iPhone, Android flagships, cameras. 50%+ global image sensor market share.' },
+      { title: 'Entertainment Integration', desc: 'Sony Pictures, Sony Music create content synergy. Games, movies, music under one roof.' },
+      { title: 'Alpha Cameras', desc: 'Mirrorless camera leadership. Professional photography/videography standard.' }
+    ],
+    opportunities: [
+      { icon: '🎮', title: 'Cloud Gaming', desc: 'PlayStation Now lags Xbox Game Pass. Build game streaming infrastructure or subscription optimization tools.' },
+      { icon: '🚗', title: 'Automotive Expansion', desc: 'Sony Honda Afeela EV launching. Create automotive software platforms or in-car entertainment systems.' },
+      { icon: '📷', title: 'Mobile Photography', desc: 'Smartphone cameras rival Sony Alphas. Build computational photography tools or mobile camera accessories.' },
+      { icon: '🎬', title: 'Content Distribution', desc: 'Sony content locked to PlayStation/streaming. Create cross-platform content distribution tools.' }
+    ]
+  },
+  {
+    id: 'micron',
+    name: 'Micron',
+    rank: 12,
+    products: 'Memory Chips',
+    strengths: [
+      { title: 'HBM Memory Leader', desc: 'High-Bandwidth Memory critical for AI chips. Micron HBM sold out through 2026. Nvidia partnership.' },
+      { title: 'AI Server Pivot', desc: 'Shifted from PC memory to AI datacenter. HBM margins far higher than commodity DRAM.' },
+      { title: 'US Manufacturing', desc: 'Only major US memory manufacturer. National security importance. CHIPS Act funding.' },
+      { title: 'Price Surge', desc: 'Memory prices up 90-95% (DRAM), 55-60% (NAND) in Q1 2026. Supply constraints = pricing power.' }
+    ],
+    opportunities: [
+      { icon: '⚡', title: 'Memory Bottlenecks', desc: 'HBM shortages limit AI chip production. Build alternative memory architectures or HBM supply chain.' },
+      { icon: '🔬', title: 'Next-Gen Memory', desc: 'DRAM/NAND reaching physical limits. Invest in MRAM, ReRAM, or other emerging memory technologies.' },
+      { icon: '♻️', title: 'Memory Recycling', desc: 'Memory chips in e-waste. Create memory module refurbishment or rare earth metal recovery systems.' },
+      { icon: '💾', title: 'Software Optimization', desc: 'Apps don\'t optimize for memory. Build memory compression, caching optimization, or memory management tools.' }
+    ]
+  },
+  {
+    id: 'google',
+    name: 'Google (Pixel)',
+    rank: 13,
+    products: 'Pixel Phones',
+    strengths: [
+      { title: 'Tensor Chip Integration', desc: 'Custom Tensor G4 chip optimized for AI/ML. On-device Gemini Nano. Best-in-class computational photography.' },
+      { title: 'Pure Android Experience', desc: '7 years of OS updates. Fastest Android updates. Clean software without bloatware.' },
+      { title: 'AI Integration', desc: 'Magic Eraser, Best Take, Audio Magic Eraser. Gemini assistant built-in. AI-first smartphone approach.' },
+      { title: 'Camera Software', desc: 'Pixel cameras beat iPhone with inferior hardware. Computational photography excellence.' }
+    ],
+    opportunities: [
+      { icon: '📱', title: 'Market Share', desc: 'Pixel <5% global smartphone share. Build market expansion strategies or regional distribution partnerships.' },
+      { icon: '🔋', title: 'Battery Life', desc: 'Tensor chips power-hungry. Create power-efficient AI accelerators or battery optimization software.' },
+      { icon: '🛠️', title: 'Hardware Quality', desc: 'Pixel hardware QC issues (screen, modem). Build quality assurance systems or component testing platforms.' },
+      { icon: '💰', title: 'Pricing Strategy', desc: 'Pixel competes with cheaper Androids and premium iPhone. Create mid-range differentiation or value-add services.' }
+    ]
+  },
+  {
+    id: 'ibm',
+    name: 'IBM',
+    rank: 14,
+    products: 'Mainframes, Quantum',
+    strengths: [
+      { title: 'Enterprise Mainframes', desc: 'Fortune 500 banks, airlines, governments run on IBM Z mainframes. 50+ years of legacy systems.' },
+      { title: 'Quantum Computing', desc: 'IBM Quantum leads commercial quantum. 1000+ qubit systems. Quantum Network partnerships.' },
+      { title: 'Hybrid Cloud (Red Hat)', desc: 'Red Hat acquisition. OpenShift powers enterprise Kubernetes. Multi-cloud management.' },
+      { title: 'AI Consulting', desc: 'Watson AI services. Enterprise AI integration. 300K+ consultants worldwide.' }
+    ],
+    opportunities: [
+      { icon: '🏛️', title: 'Legacy Modernization', desc: 'Mainframes expensive to maintain. Build COBOL-to-modern language translators or mainframe migration tools.' },
+      { icon: '🔮', title: 'Quantum Practicality', desc: 'Quantum computers not yet practical. Create near-term quantum algorithms or quantum-classical hybrid systems.' },
+      { icon: '📉', title: 'Market Relevance', desc: 'IBM losing ground to AWS, Azure, Google Cloud. Build cloud migration tools or multi-cloud management platforms.' },
+      { icon: '💼', title: 'Innovation Speed', desc: 'Slow to adapt to modern tech. Create rapid prototyping tools or startup acquisition strategies.' }
+    ]
+  },
+  {
+    id: 'oracle',
+    name: 'Oracle',
+    rank: 15,
+    products: 'Database, Cloud',
+    strengths: [
+      { title: 'Database Monopoly', desc: 'Oracle Database runs critical enterprise apps. High switching costs. Recurring license revenue.' },
+      { title: 'Cloud Infrastructure', desc: 'OCI (Oracle Cloud Infrastructure) growing. OpenAI $60B/yr partnership (when built). AI cloud ambitions.' },
+      { title: 'Enterprise Lock-in', desc: 'ERP, CRM, SCM integrated suite. Customers can\'t easily switch. NetSuite acquisition.' },
+      { title: 'Aggressive Sales', desc: 'License audits force upgrades. Multi-year contracts. High-pressure sales tactics.' }
+    ],
+    opportunities: [
+      { icon: '💸', title: 'Licensing Complexity', desc: 'Oracle licensing notoriously complex. Build license optimization tools or compliance management platforms.' },
+      { icon: '☁️', title: 'Cloud Migration', desc: 'Enterprises migrating away from Oracle. Create database migration tools or open-source database alternatives.' },
+      { icon: '📊', title: 'Cash Flow Issues', desc: 'Oracle borrowing heavily for AI infrastructure ($60B OpenAI deal). Build fintech debt management or project finance tools.' },
+      { icon: '🤝', title: 'Developer Relations', desc: 'Oracle developer community weak vs AWS/Azure. Create developer tools, training platforms, or community engagement software.' }
+    ]
+  },
+  {
+    id: 'dell',
+    name: 'Dell Technologies',
+    rank: 16,
+    products: 'PCs, Servers',
+    strengths: [
+      { title: 'Enterprise IT Solutions', desc: 'Dell EMC storage, PowerEdge servers, VxRail hyperconverged. Complete datacenter portfolio.' },
+      { title: 'Direct Sales Model', desc: 'B2B relationships with enterprises. Customized configurations. Supply chain efficiency.' },
+      { title: 'PC Market Leader', desc: 'Top 3 global PC vendor. XPS, Latitude, Alienware brands. Gaming to enterprise.' },
+      { title: 'Services Revenue', desc: 'ProSupport, consulting, managed services. Recurring revenue beyond hardware.' }
+    ],
+    opportunities: [
+      { icon: '🖥️', title: 'PC Market Decline', desc: 'PC sales stagnant. Build PC-to-cloud migration tools or virtual desktop infrastructure platforms.' },
+      { icon: '💾', title: 'Storage Competition', desc: 'Pure Storage, NetApp challenging Dell EMC. Create next-gen storage architectures or data deduplication tech.' },
+      { icon: '🌐', title: 'Cloud-First Era', desc: 'Enterprises moving to cloud, reducing on-prem servers. Build hybrid cloud solutions or edge computing platforms.' },
+      { icon: '🔧', title: 'Commoditization', desc: 'PC/server hardware commoditizing. Create software-defined infrastructure or management platforms.' }
+    ]
+  },
+  {
+    id: 'hp',
+    name: 'HP Inc.',
+    rank: 17,
+    products: 'PCs, Printers',
+    strengths: [
+      { title: 'Printer Dominance', desc: 'Largest printer manufacturer. Ink subscription revenue (HP Instant Ink). High-margin consumables business.' },
+      { title: 'PC Portfolio', desc: 'HP Pavilion, Envy, Spectre, Omen (gaming). Consumer to enterprise. Top 3 global PC vendor.' },
+      { title: 'Print Services', desc: 'Managed Print Services for enterprises. Document workflow solutions. Recurring revenue.' },
+      { title: 'Brand Recognition', desc: '80+ year history. Trusted brand in enterprises and education.' }
+    ],
+    opportunities: [
+      { icon: '🖨️', title: 'Ink Cartridge Backlash', desc: 'DRM-locked cartridges anger customers. Build third-party cartridge alternatives or open-source printer firmware.' },
+      { icon: '📄', title: 'Paperless Movement', desc: 'Digital documents reducing printing. Create document management systems or digital signature platforms.' },
+      { icon: '🎮', title: 'Gaming Market', desc: 'HP Omen lags Alienware, ROG. Build gaming-specific components or esports partnerships.' },
+      { icon: '♻️', title: 'Sustainability', desc: 'Printer waste and e-waste concerns. Create cartridge recycling programs or eco-friendly printing solutions.' }
+    ]
+  },
+  {
+    id: 'lenovo',
+    name: 'Lenovo',
+    rank: 18,
+    products: 'PCs, Tablets',
+    strengths: [
+      { title: 'Global PC Leader', desc: '#1 worldwide PC market share (23%+). ThinkPad business laptops. Yoga convertibles.' },
+      { title: 'Motorola Smartphones', desc: 'Motorola brand in mid-range Android. Razr foldable phone. Budget smartphone portfolio.' },
+      { title: 'Datacenter Hardware', desc: 'ThinkSystem servers, ThinkAgile. Enterprise storage and networking.' },
+      { title: 'Cost Leadership', desc: 'Manufacturing efficiency. Supply chain optimization. Competitive pricing.' }
+    ],
+    opportunities: [
+      { icon: '🔝', title: 'Premium Perception', desc: 'Lenovo seen as budget brand vs Apple, Dell. Build premium product lines or brand repositioning strategies.' },
+      { icon: '📱', title: 'Motorola Revival', desc: 'Motorola market share declining. Create smartphone differentiation features or regional expansion plans.' },
+      { icon: '💻', title: 'Innovation Gap', desc: 'Incremental updates, not breakthrough innovation. Build R&D acceleration tools or design partnerships.' },
+      { icon: '🌍', title: 'Western Market Share', desc: 'Strong in China, weak in US/Europe. Create localized marketing strategies or regional partnerships.' }
+    ]
+  },
+  {
+    id: 'asus',
+    name: 'ASUS',
+    rank: 19,
+    products: 'ROG Gaming, Motherboards',
+    strengths: [
+      { title: 'Gaming Hardware', desc: 'ROG (Republic of Gamers) dominates enthusiast market. ROG Ally handheld gaming PC.' },
+      { title: 'Motherboard Leader', desc: 'Top motherboard manufacturer. Enthusiast overclocking. TUF Gaming, Prime series.' },
+      { title: 'Innovation Focus', desc: 'Zenbook dual-screen laptops. ProArt for creators. Experimenting with form factors.' },
+      { title: 'Component Ecosystem', desc: 'GPUs, monitors, routers, peripherals. Complete gaming ecosystem.' }
+    ],
+    opportunities: [
+      { icon: '🎮', title: 'ROG Ally Competition', desc: 'Steam Deck dominates handheld PC gaming. Build Windows gaming optimization or handheld-specific features.' },
+      { icon: '💰', title: 'Premium Pricing', desc: 'ROG products expensive. Create mid-tier gaming lines or financing programs for enthusiasts.' },
+      { icon: '🖥️', title: 'Pre-built Gaming PCs', desc: 'Lags Alienware, Corsair in pre-builts. Build gaming PC configurator platforms or turnkey solutions.' },
+      { icon: '📱', title: 'Mobile Gaming', desc: 'ROG Phone niche product. Create mainstream gaming phone features or mobile gaming peripherals.' }
+    ]
+  },
+  {
+    id: 'tesla',
+    name: 'Tesla',
+    rank: 20,
+    products: 'EVs, Energy Storage',
+    strengths: [
+      { title: 'EV Market Leader', desc: 'Best-selling EVs globally. Model Y #1 selling car worldwide (2023). Supercharger network.' },
+      { title: 'Software Integration', desc: 'Over-the-air updates. Full Self-Driving (FSD) AI. Tesla as software company, not just cars.' },
+      { title: 'Battery Technology', desc: '4680 cells in production. Megapack energy storage. Vertical integration from mining to grid.' },
+      { title: 'Manufacturing Innovation', desc: 'Gigafactories, Gigacasting, structural battery packs. Industry-leading margins.' }
+    ],
+    opportunities: [
+      { icon: '🔧', title: 'Build Quality', desc: 'Panel gaps, fit/finish issues. TÜV report: Model Y worst reliability 2022-2023. Build QC automation tools.' },
+      { icon: '🚗', title: 'Competition Intensifies', desc: 'BYD, Hyundai, Ford EVs improving. Create EV differentiation strategies or software licensing platforms.' },
+      { icon: '🤖', title: 'FSD Delays', desc: 'Full Self-Driving overpromised, underdelivered. Build ADAS validation tools or autonomous driving datasets.' },
+      { icon: '⚡', title: 'Charging Network', desc: 'Supercharger opening to others dilutes advantage. Create universal charging payment systems or fast-charging alternatives.' }
+    ]
+  }
+];
+
+// ─── RENDER SIDEBAR ───
+const sidebar = document.getElementById('sidebar');
+companies.forEach((company, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'company-btn' + (i === 0 ? ' active' : '');
+  btn.innerHTML = `
+    <span class="btn-rank">#${company.rank}</span>
+    <div class="btn-logo">${logos[company.id]}</div>
+    <div class="btn-info">
+      <div class="btn-name">${company.name}</div>
+      <div class="btn-products">${company.products}</div>
+    </div>
+  `;
+  btn.addEventListener('click', () => selectCompany(i));
+  sidebar.appendChild(btn);
+});
+
+// ─── SELECT COMPANY ───
+function selectCompany(index) {
+  document.querySelectorAll('.company-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', i === index);
+  });
+  renderPanels(companies[index]);
+}
+
+// ─── RENDER PANELS ───
+function renderPanels(company) {
+  // Strengths
+  const strengthsHTML = `
+    <ul class="strength-list fade-in">
+      ${company.strengths.map(s => `
+        <li class="strength-item">
+          <div class="strength-title">${s.title}</div>
+          <div class="strength-desc">${s.desc}</div>
+        </li>
+      `).join('')}
+    </ul>
+  `;
+  document.getElementById('strengthsContent').innerHTML = strengthsHTML;
+
+  // Opportunities
+  const oppsHTML = `
+    <ul class="opp-list fade-in">
+      ${company.opportunities.map(o => `
+        <li class="opp-item">
+          <div class="opp-title">
+            <span class="opp-icon">${o.icon}</span>
+            ${o.title}
+          </div>
+          <div class="opp-desc">${o.desc}</div>
+        </li>
+      `).join('')}
+    </ul>
+  `;
+  document.getElementById('opportunitiesContent').innerHTML = oppsHTML;
+}
+
+// Init
+renderPanels(companies[0]);
+</script>
+</body>
+</html>
